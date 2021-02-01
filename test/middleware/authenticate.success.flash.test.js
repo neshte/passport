@@ -6,7 +6,7 @@ var chai = require('chai')
   , Passport = require('../..').Passport;
 
 
-describe('middleware/authenticate', function() {
+describe.skip('middleware/authenticate', function() {
   
   describe('using strategy that specifies message', function() {
     

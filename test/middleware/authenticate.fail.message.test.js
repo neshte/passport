@@ -44,8 +44,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/login');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/login');
     });
   });
   
@@ -87,8 +87,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/login');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/login');
     });
   });
   
@@ -128,8 +128,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/login');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/login');
     });
   });
   
@@ -169,8 +169,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/login');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/login');
     });
   });
 

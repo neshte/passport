@@ -37,8 +37,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should respond', function() {
-      expect(response.statusCode).to.equal(401);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(401);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.equal('Unauthorized');
     });
   });
@@ -72,8 +72,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/login');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/login');
     });
   });
   
@@ -106,12 +106,12 @@ describe('middleware/authenticate', function() {
     });
     
     it('should respond', function() {
-      expect(response.statusCode).to.equal(401);
+      expect(response.awsres.statusCode).to.equal(401);
       expect(response.body).to.equal('Unauthorized');
     });
     
     it('should set authenticate header on response', function() {
-      var val = response.getHeader('WWW-Authenticate');
+      var val = response.awsres.headers['WWW-Authenticate'];
       expect(val).to.be.an('array');
       expect(val).to.have.length(1);
       
@@ -148,8 +148,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should respond', function() {
-      expect(response.statusCode).to.equal(403);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(403);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.equal('Forbidden');
     });
   });
@@ -183,8 +183,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should respond', function() {
-      expect(response.statusCode).to.equal(400);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(400);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.equal('Bad Request');
     });
   });
@@ -228,8 +228,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should not set body of response', function() {
-      expect(response.statusCode).to.equal(401);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(401);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.be.undefined;
     });
   });
@@ -273,8 +273,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should not set body of response', function() {
-      expect(response.statusCode).to.equal(401);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(401);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.be.undefined;
     });
   });
@@ -318,8 +318,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should not set body of response', function() {
-      expect(response.statusCode).to.equal(400);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(400);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.be.undefined;
     });
   });
@@ -363,12 +363,12 @@ describe('middleware/authenticate', function() {
     });
     
     it('should not set body of response', function() {
-      expect(response.statusCode).to.equal(401);
+      expect(response.awsres.statusCode).to.equal(401);
       expect(response.body).to.be.undefined;
     });
     
     it('should set authenticate header on response', function() {
-      var val = response.getHeader('WWW-Authenticate');
+      var val = response.awsres.headers['WWW-Authenticate'];
       expect(val).to.be.an('array');
       expect(val).to.have.length(1);
       
@@ -415,8 +415,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should not set body of response', function() {
-      expect(response.statusCode).to.equal(403);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(403);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.be.undefined;
     });
   });
@@ -460,8 +460,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should not set body of response', function() {
-      expect(response.statusCode).to.equal(402);
-      expect(response.getHeader('WWW-Authenticate')).to.be.undefined;
+      expect(response.awsres.statusCode).to.equal(402);
+      expect(response.awsres.headers ? response.awsres.headers['WWW-Authenticate'] : response.awsres.headers).to.be.undefined;
       expect(response.body).to.be.undefined;
     });
   });

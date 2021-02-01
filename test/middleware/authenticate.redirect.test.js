@@ -37,9 +37,9 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/idp');
-      expect(response.getHeader('Content-Length')).to.equal('0');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/idp');
+      expect(response.awsres.headers['Content-Length']).to.equal('0');
     });
   });
   
@@ -72,9 +72,9 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(303);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/idp');
-      expect(response.getHeader('Content-Length')).to.equal('0');
+      expect(response.awsres.statusCode).to.equal(303);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/idp');
+      expect(response.awsres.headers['Content-Length']).to.equal('0');
     });
   });
   
@@ -107,8 +107,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(302);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/idp');
+      expect(response.awsres.statusCode).to.equal(302);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/idp');
     });
   });
   
@@ -141,8 +141,8 @@ describe('middleware/authenticate', function() {
     });
     
     it('should redirect', function() {
-      expect(response.statusCode).to.equal(303);
-      expect(response.getHeader('Location')).to.equal('http://www.example.com/idp');
+      expect(response.awsres.statusCode).to.equal(303);
+      expect(response.awsres.headers['Location']).to.equal('http://www.example.com/idp');
     });
   });
   
