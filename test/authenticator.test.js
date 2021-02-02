@@ -389,7 +389,7 @@ describe('Authenticator', function() {
     describe('with one serializer that takes request as argument', function() {
       var authenticator = new Authenticator();
       authenticator.serializeUser(function(req, user, done) {
-        if (req.url !== '/foo') { return done(new Error('incorrect req argument')); }
+        if (req.path !== '/foo') { return done(new Error('incorrect req argument')); }
         done(null, user.id);
       });
       
@@ -752,7 +752,7 @@ describe('Authenticator', function() {
     describe('with one deserializer that takes request as argument', function() {
       var authenticator = new Authenticator();
       authenticator.deserializeUser(function(req, obj, done) {
-        if (req.url !== '/foo') { return done(new Error('incorrect req argument')); }
+        if (req.path !== '/foo') { return done(new Error('incorrect req argument')); }
         done(null, obj.username);
       });
       
@@ -950,7 +950,7 @@ describe('Authenticator', function() {
     describe('with one transform that takes request as argument', function() {
       var authenticator = new Authenticator();
       authenticator.transformAuthInfo(function(req, info, done) {
-        if (req.url !== '/foo') { return done(new Error('incorrect req argument')); }
+        if (req.path !== '/foo') { return done(new Error('incorrect req argument')); }
         done(null, { clientId: info.clientId, client: { name: 'Foo' }});
       });
       
