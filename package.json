@@ -1,5 +1,5 @@
 {
-  "name": "passport",
+  "name": "passport-aws-lambda",
   "version": "0.4.1",
   "description": "Simple, unobtrusive authentication for Node.js.",
   "keywords": [
@@ -17,10 +17,10 @@
   "homepage": "http://passportjs.org/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaredhanson/passport.git"
+    "url": "git://github.com/neshte/passport-aws-lambda.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport/issues"
+    "url": "http://github.com/neshte/passport-aws-lambda/issues"
   },
   "license": "MIT",
   "licenses": [
